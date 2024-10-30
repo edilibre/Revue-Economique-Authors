@@ -1,0 +1,644 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{1}
+  \datalist[entry]{nyt/global//global/global/global}
+    \entry{alaoui2016}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=06e8e771eb301f296a0b07e0d48e93c8}{%
+           family={Alaoui},
+           familyi={A\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8eaaf6500005c5809ae88e462b90ed3f}{%
+           family={Penta},
+           familyi={P\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{43a6897f235e406425fdfecd2b86b786}
+      \strng{fullhash}{43a6897f235e406425fdfecd2b86b786}
+      \strng{fullhashraw}{43a6897f235e406425fdfecd2b86b786}
+      \strng{bibnamehash}{43a6897f235e406425fdfecd2b86b786}
+      \strng{authorbibnamehash}{43a6897f235e406425fdfecd2b86b786}
+      \strng{authornamehash}{43a6897f235e406425fdfecd2b86b786}
+      \strng{authorfullhash}{43a6897f235e406425fdfecd2b86b786}
+      \strng{authorfullhashraw}{43a6897f235e406425fdfecd2b86b786}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Review of Economic Studies}
+      \field{langid}{english}
+      \field{number}{4}
+      \field{title}{Endogenous Depth of Reasoning}
+      \field{volume}{83}
+      \field{year}{2016}
+      \field{pages}{1297\bibrangedash 1333}
+      \range{pages}{37}
+    \endentry
+    \entry{alosferrer2021}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=e6c6997a629c5121c729f6086299e418}{%
+           family={Alos-Ferrer},
+           familyi={A\bibinithyphendelim F\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cffaacca1ff5e38cf5d25ab2fba376ae}{%
+           family={Bückenmaier},
+           familyi={B\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{1e1c88d1a0b83772a1d389bdb375c8b4}
+      \strng{fullhash}{1e1c88d1a0b83772a1d389bdb375c8b4}
+      \strng{fullhashraw}{1e1c88d1a0b83772a1d389bdb375c8b4}
+      \strng{bibnamehash}{1e1c88d1a0b83772a1d389bdb375c8b4}
+      \strng{authorbibnamehash}{1e1c88d1a0b83772a1d389bdb375c8b4}
+      \strng{authornamehash}{1e1c88d1a0b83772a1d389bdb375c8b4}
+      \strng{authorfullhash}{1e1c88d1a0b83772a1d389bdb375c8b4}
+      \strng{authorfullhashraw}{1e1c88d1a0b83772a1d389bdb375c8b4}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Experimental Economics}
+      \field{langid}{english}
+      \field{title}{Cognitive Sophistication and Deliberation Times}
+      \field{volume}{24}
+      \field{year}{2021}
+      \field{pages}{558\bibrangedash 592}
+      \range{pages}{35}
+    \endentry
+    \entry{arad2012}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=73bda7e020853d38aa58e4d57a9d0919}{%
+           family={Arad},
+           familyi={A\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6b00440874e906f8487c5d331f5abf18}{%
+           family={Rubinstein},
+           familyi={R\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{78b9e2e956458ef02cd6f39d002b6ab4}
+      \strng{fullhash}{78b9e2e956458ef02cd6f39d002b6ab4}
+      \strng{fullhashraw}{78b9e2e956458ef02cd6f39d002b6ab4}
+      \strng{bibnamehash}{78b9e2e956458ef02cd6f39d002b6ab4}
+      \strng{authorbibnamehash}{78b9e2e956458ef02cd6f39d002b6ab4}
+      \strng{authornamehash}{78b9e2e956458ef02cd6f39d002b6ab4}
+      \strng{authorfullhash}{78b9e2e956458ef02cd6f39d002b6ab4}
+      \strng{authorfullhashraw}{78b9e2e956458ef02cd6f39d002b6ab4}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The American Economic Review}
+      \field{langid}{english}
+      \field{number}{7}
+      \field{title}{The 11-20 Money Request Game: A Level-k Reasoning Study}
+      \field{volume}{102}
+      \field{year}{2012}
+      \field{pages}{3561\bibrangedash 3573}
+      \range{pages}{13}
+    \endentry
+    \entry{crawford2013}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=38eb8204a0985b5fd0848021ebdac7ce}{%
+           family={Crawford},
+           familyi={C\bibinitperiod},
+           given={V.\bibnamedelimi P.},
+           giveni={V\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4a116a2e5c7453c95f6726b9cc975668}{%
+           family={Costa-Gomes},
+           familyi={C\bibinithyphendelim G\bibinitperiod},
+           given={M.\bibnamedelimi A.},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f09406102a15a96dde6ea088f4fa88e6}{%
+           family={Iriberri},
+           familyi={I\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{73f34b1c1de0042f7170203ab5af4b29}
+      \strng{fullhash}{73f34b1c1de0042f7170203ab5af4b29}
+      \strng{fullhashraw}{73f34b1c1de0042f7170203ab5af4b29}
+      \strng{bibnamehash}{73f34b1c1de0042f7170203ab5af4b29}
+      \strng{authorbibnamehash}{73f34b1c1de0042f7170203ab5af4b29}
+      \strng{authornamehash}{73f34b1c1de0042f7170203ab5af4b29}
+      \strng{authorfullhash}{73f34b1c1de0042f7170203ab5af4b29}
+      \strng{authorfullhashraw}{73f34b1c1de0042f7170203ab5af4b29}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Economic Literature}
+      \field{langid}{english}
+      \field{number}{1}
+      \field{title}{Structural Models of Nonequilibrium Strategic Thinking: Theory, Evidence and Applications}
+      \field{volume}{51}
+      \field{year}{2013}
+      \field{pages}{5\bibrangedash 62}
+      \range{pages}{58}
+    \endentry
+    \entry{ellsberg1961}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b11d8989fd52fee7afe3d30bd18d0171}{%
+           family={Ellsberg},
+           familyi={E\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b11d8989fd52fee7afe3d30bd18d0171}
+      \strng{fullhash}{b11d8989fd52fee7afe3d30bd18d0171}
+      \strng{fullhashraw}{b11d8989fd52fee7afe3d30bd18d0171}
+      \strng{bibnamehash}{b11d8989fd52fee7afe3d30bd18d0171}
+      \strng{authorbibnamehash}{b11d8989fd52fee7afe3d30bd18d0171}
+      \strng{authornamehash}{b11d8989fd52fee7afe3d30bd18d0171}
+      \strng{authorfullhash}{b11d8989fd52fee7afe3d30bd18d0171}
+      \strng{authorfullhashraw}{b11d8989fd52fee7afe3d30bd18d0171}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Quarterly Journal of Economics}
+      \field{langid}{english}
+      \field{number}{4}
+      \field{title}{Risk, Ambiguity and the Savage Axioms}
+      \field{volume}{75}
+      \field{year}{1961}
+      \field{pages}{643\bibrangedash 669}
+      \range{pages}{27}
+    \endentry
+    \entry{fe2022}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=9466b339656f52e515da836c895f18d8}{%
+           family={Fe},
+           familyi={F\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=be98f062b36c81c84500baa426ab17b8}{%
+           family={Gill},
+           familyi={G\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b07eb93e8d979f508e518dadc19c7b52}{%
+           family={Prowse},
+           familyi={P\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{d6fb478a7e1c903fb0748ff8d3f9d95f}
+      \strng{fullhash}{d6fb478a7e1c903fb0748ff8d3f9d95f}
+      \strng{fullhashraw}{d6fb478a7e1c903fb0748ff8d3f9d95f}
+      \strng{bibnamehash}{d6fb478a7e1c903fb0748ff8d3f9d95f}
+      \strng{authorbibnamehash}{d6fb478a7e1c903fb0748ff8d3f9d95f}
+      \strng{authornamehash}{d6fb478a7e1c903fb0748ff8d3f9d95f}
+      \strng{authorfullhash}{d6fb478a7e1c903fb0748ff8d3f9d95f}
+      \strng{authorfullhashraw}{d6fb478a7e1c903fb0748ff8d3f9d95f}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Political Economy}
+      \field{langid}{english}
+      \field{number}{10}
+      \field{title}{Cognitive Skills, Strategic Sophistication, and Life Outcomes}
+      \field{volume}{130}
+      \field{year}{2022}
+      \field{pages}{2643\bibrangedash 2704}
+      \range{pages}{62}
+    \endentry
+    \entry{garciapola2020}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=c4372d9d0e103675bca996151c5874b0}{%
+           family={Garcia-Pola},
+           familyi={G\bibinithyphendelim P\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c4372d9d0e103675bca996151c5874b0}
+      \strng{fullhash}{c4372d9d0e103675bca996151c5874b0}
+      \strng{fullhashraw}{c4372d9d0e103675bca996151c5874b0}
+      \strng{bibnamehash}{c4372d9d0e103675bca996151c5874b0}
+      \strng{authorbibnamehash}{c4372d9d0e103675bca996151c5874b0}
+      \strng{authornamehash}{c4372d9d0e103675bca996151c5874b0}
+      \strng{authorfullhash}{c4372d9d0e103675bca996151c5874b0}
+      \strng{authorfullhashraw}{c4372d9d0e103675bca996151c5874b0}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Games and Economic Behavior}
+      \field{langid}{english}
+      \field{title}{Do People Minimize Regret in Strategic Situations?}
+      \field{volume}{124}
+      \field{year}{2020}
+      \field{pages}{82\bibrangedash 104}
+      \range{pages}{23}
+    \endentry
+    \entry{goeree2018}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=3b2e439c413ec086ca861c29c3678140}{%
+           family={Goeree},
+           familyi={G\bibinitperiod},
+           given={J.\bibnamedelimi K.},
+           giveni={J\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=56a6baf8e5b98353391365255a0ea6f7}{%
+           family={Louis},
+           familyi={L\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8afab9bdc9b292debbeb136dfd97036c}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e9bc3ca701eefaece217ec22e113e96b}
+      \strng{fullhash}{e9bc3ca701eefaece217ec22e113e96b}
+      \strng{fullhashraw}{e9bc3ca701eefaece217ec22e113e96b}
+      \strng{bibnamehash}{e9bc3ca701eefaece217ec22e113e96b}
+      \strng{authorbibnamehash}{e9bc3ca701eefaece217ec22e113e96b}
+      \strng{authornamehash}{e9bc3ca701eefaece217ec22e113e96b}
+      \strng{authorfullhash}{e9bc3ca701eefaece217ec22e113e96b}
+      \strng{authorfullhashraw}{e9bc3ca701eefaece217ec22e113e96b}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Economic Journal}
+      \field{langid}{english}
+      \field{title}{Noisy Introspection in the 11-20 Game}
+      \field{volume}{128}
+      \field{year}{2018}
+      \field{pages}{1509\bibrangedash 1530}
+      \range{pages}{22}
+    \endentry
+    \entry{halpern2012}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=a8073b17364c37122b13d3fb16746293}{%
+           family={Halpern},
+           familyi={H\bibinitperiod},
+           given={J.\bibnamedelimi Y.},
+           giveni={J\bibinitperiod\bibinitdelim Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2498bdc481aae92f965b8ddf963a17b0}{%
+           family={Pass},
+           familyi={P\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a49c00d771d9bf864489ad0963a3a6c3}
+      \strng{fullhash}{a49c00d771d9bf864489ad0963a3a6c3}
+      \strng{fullhashraw}{a49c00d771d9bf864489ad0963a3a6c3}
+      \strng{bibnamehash}{a49c00d771d9bf864489ad0963a3a6c3}
+      \strng{authorbibnamehash}{a49c00d771d9bf864489ad0963a3a6c3}
+      \strng{authornamehash}{a49c00d771d9bf864489ad0963a3a6c3}
+      \strng{authorfullhash}{a49c00d771d9bf864489ad0963a3a6c3}
+      \strng{authorfullhashraw}{a49c00d771d9bf864489ad0963a3a6c3}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Games and Economic Behavior}
+      \field{langid}{english}
+      \field{title}{Iterated Regret Minimization: A New Solution Concept}
+      \field{volume}{74}
+      \field{year}{2012}
+      \field{pages}{184\bibrangedash 207}
+      \range{pages}{24}
+    \endentry
+    \entry{li2018}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=5a0638d8cb80a662b4b553e633e60102}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={K.\bibnamedelimi K.},
+           giveni={K\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=40fd1eddcc7b88651023faacaddabd44}{%
+           family={Rong},
+           familyi={R\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e66c96f6f9c1d939a87fc05708a67b8e}
+      \strng{fullhash}{e66c96f6f9c1d939a87fc05708a67b8e}
+      \strng{fullhashraw}{e66c96f6f9c1d939a87fc05708a67b8e}
+      \strng{bibnamehash}{e66c96f6f9c1d939a87fc05708a67b8e}
+      \strng{authorbibnamehash}{e66c96f6f9c1d939a87fc05708a67b8e}
+      \strng{authornamehash}{e66c96f6f9c1d939a87fc05708a67b8e}
+      \strng{authorfullhash}{e66c96f6f9c1d939a87fc05708a67b8e}
+      \strng{authorfullhashraw}{e66c96f6f9c1d939a87fc05708a67b8e}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Games MDPI}
+      \field{langid}{english}
+      \field{number}{3}
+      \field{title}{Choices in the 11-20 Game: The Role of Risk Aversion}
+      \field{volume}{9}
+      \field{year}{2018}
+      \field{pages}{<https://doi.org/10.3390/g9030053>}
+      \range{pages}{-1}
+    \endentry
+    \entry{lindner2013}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=bf660378ab04b17dfe8c1a6d28deb9ed}{%
+           family={Lindner},
+           familyi={L\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0935681eacf84ec8079a5deba5251828}{%
+           family={Sutter},
+           familyi={S\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{bd50a3226e516e4d7039fb3f270ace3a}
+      \strng{fullhash}{bd50a3226e516e4d7039fb3f270ace3a}
+      \strng{fullhashraw}{bd50a3226e516e4d7039fb3f270ace3a}
+      \strng{bibnamehash}{bd50a3226e516e4d7039fb3f270ace3a}
+      \strng{authorbibnamehash}{bd50a3226e516e4d7039fb3f270ace3a}
+      \strng{authornamehash}{bd50a3226e516e4d7039fb3f270ace3a}
+      \strng{authorfullhash}{bd50a3226e516e4d7039fb3f270ace3a}
+      \strng{authorfullhashraw}{bd50a3226e516e4d7039fb3f270ace3a}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Economic Letters}
+      \field{langid}{english}
+      \field{title}{Level-k Reasoning and Time Pressure in the 11-20 Money Request Game}
+      \field{volume}{120}
+      \field{year}{2013}
+      \field{pages}{542\bibrangedash 545}
+      \range{pages}{4}
+    \endentry
+    \entry{linhart1989}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=afda8b5f909f41acc056145b0654daee}{%
+           family={Linhart},
+           familyi={L\bibinitperiod},
+           given={P.\bibnamedelimi B.},
+           giveni={P\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=79b17864a65ecded56622e749bc10193}{%
+           family={Radner},
+           familyi={R\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{6cf60dd20ba904558b75919dea7cf773}
+      \strng{fullhash}{6cf60dd20ba904558b75919dea7cf773}
+      \strng{fullhashraw}{6cf60dd20ba904558b75919dea7cf773}
+      \strng{bibnamehash}{6cf60dd20ba904558b75919dea7cf773}
+      \strng{authorbibnamehash}{6cf60dd20ba904558b75919dea7cf773}
+      \strng{authornamehash}{6cf60dd20ba904558b75919dea7cf773}
+      \strng{authorfullhash}{6cf60dd20ba904558b75919dea7cf773}
+      \strng{authorfullhashraw}{6cf60dd20ba904558b75919dea7cf773}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Economic Theory}
+      \field{langid}{english}
+      \field{title}{Minimax-Regret Strategies for Bargaining Over Several Variables}
+      \field{volume}{48}
+      \field{year}{1989}
+      \field{pages}{152\bibrangedash 178}
+      \range{pages}{27}
+    \endentry
+    \entry{nagel1995}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=8e8c01a4b05ac664fe19c8dc0f7653f6}{%
+           family={Nagel},
+           familyi={N\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8e8c01a4b05ac664fe19c8dc0f7653f6}
+      \strng{fullhash}{8e8c01a4b05ac664fe19c8dc0f7653f6}
+      \strng{fullhashraw}{8e8c01a4b05ac664fe19c8dc0f7653f6}
+      \strng{bibnamehash}{8e8c01a4b05ac664fe19c8dc0f7653f6}
+      \strng{authorbibnamehash}{8e8c01a4b05ac664fe19c8dc0f7653f6}
+      \strng{authornamehash}{8e8c01a4b05ac664fe19c8dc0f7653f6}
+      \strng{authorfullhash}{8e8c01a4b05ac664fe19c8dc0f7653f6}
+      \strng{authorfullhashraw}{8e8c01a4b05ac664fe19c8dc0f7653f6}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The American Economic Review}
+      \field{langid}{english}
+      \field{number}{5}
+      \field{title}{Unraveling in Guessing Games: An Experimental Study}
+      \field{volume}{85}
+      \field{year}{1995}
+      \field{pages}{1313\bibrangedash 1326}
+      \range{pages}{14}
+    \endentry
+    \entry{niehans1948}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b78a37e95e5827d80f909fe68a5be2f6}{%
+           family={Niehans},
+           familyi={N\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b78a37e95e5827d80f909fe68a5be2f6}
+      \strng{fullhash}{b78a37e95e5827d80f909fe68a5be2f6}
+      \strng{fullhashraw}{b78a37e95e5827d80f909fe68a5be2f6}
+      \strng{bibnamehash}{b78a37e95e5827d80f909fe68a5be2f6}
+      \strng{authorbibnamehash}{b78a37e95e5827d80f909fe68a5be2f6}
+      \strng{authornamehash}{b78a37e95e5827d80f909fe68a5be2f6}
+      \strng{authorfullhash}{b78a37e95e5827d80f909fe68a5be2f6}
+      \strng{authorfullhashraw}{b78a37e95e5827d80f909fe68a5be2f6}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Schweizerische Zeitschrift für Volkswirtschaft und Statistik}
+      \field{langid}{english}
+      \field{title}{Zur Preisbildung bei ungewissen Erwartungen}
+      \field{volume}{84}
+      \field{year}{1948}
+      \field{pages}{433\bibrangedash 456}
+      \range{pages}{24}
+    \endentry
+    \entry{renou2010}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=c76d49ae3c66a4b5fe690658a7e18e97}{%
+           family={Renou},
+           familyi={R\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=15dbbb82d66c459658d773c9cf24c2fb}{%
+           family={Schlag},
+           familyi={S\bibinitperiod},
+           given={K.\bibnamedelimi H.},
+           giveni={K\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ba50ade06c30859a908db35abe73273a}
+      \strng{fullhash}{ba50ade06c30859a908db35abe73273a}
+      \strng{fullhashraw}{ba50ade06c30859a908db35abe73273a}
+      \strng{bibnamehash}{ba50ade06c30859a908db35abe73273a}
+      \strng{authorbibnamehash}{ba50ade06c30859a908db35abe73273a}
+      \strng{authornamehash}{ba50ade06c30859a908db35abe73273a}
+      \strng{authorfullhash}{ba50ade06c30859a908db35abe73273a}
+      \strng{authorfullhashraw}{ba50ade06c30859a908db35abe73273a}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Economic Theory}
+      \field{langid}{english}
+      \field{title}{Minimax Regret and Strategic Uncertainty}
+      \field{volume}{145}
+      \field{year}{2010}
+      \field{pages}{264\bibrangedash 286}
+      \range{pages}{23}
+    \endentry
+    \entry{savage1951}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=36212fd931d1c57b1578c877eb572053}{%
+           family={Savage},
+           familyi={S\bibinitperiod},
+           given={L.\bibnamedelimi J.},
+           giveni={L\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{36212fd931d1c57b1578c877eb572053}
+      \strng{fullhash}{36212fd931d1c57b1578c877eb572053}
+      \strng{fullhashraw}{36212fd931d1c57b1578c877eb572053}
+      \strng{bibnamehash}{36212fd931d1c57b1578c877eb572053}
+      \strng{authorbibnamehash}{36212fd931d1c57b1578c877eb572053}
+      \strng{authornamehash}{36212fd931d1c57b1578c877eb572053}
+      \strng{authorfullhash}{36212fd931d1c57b1578c877eb572053}
+      \strng{authorfullhashraw}{36212fd931d1c57b1578c877eb572053}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the American Statistical Association}
+      \field{langid}{english}
+      \field{title}{The Theory of Statistical Decision}
+      \field{volume}{46}
+      \field{year}{1951}
+      \field{pages}{55\bibrangedash 67}
+      \range{pages}{13}
+    \endentry
+    \entry{umbhauer2022}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=d7a6514e922bcdc1b9a65c14d918b214}{%
+           family={Umbhauer},
+           familyi={U\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{d7a6514e922bcdc1b9a65c14d918b214}
+      \strng{fullhash}{d7a6514e922bcdc1b9a65c14d918b214}
+      \strng{fullhashraw}{d7a6514e922bcdc1b9a65c14d918b214}
+      \strng{bibnamehash}{d7a6514e922bcdc1b9a65c14d918b214}
+      \strng{authorbibnamehash}{d7a6514e922bcdc1b9a65c14d918b214}
+      \strng{authornamehash}{d7a6514e922bcdc1b9a65c14d918b214}
+      \strng{authorfullhash}{d7a6514e922bcdc1b9a65c14d918b214}
+      \strng{authorfullhashraw}{d7a6514e922bcdc1b9a65c14d918b214}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Game Theory Review}
+      \field{langid}{english}
+      \field{number}{4}
+      \field{title}{Market Exit and Minimax Regret}
+      \field{volume}{24}
+      \field{year}{2022}
+      \field{pages}{<https://doi.org/10.1142/S021919892250013X>}
+      \range{pages}{-1}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

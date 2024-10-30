@@ -1,0 +1,494 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{latexsym}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{appendix}
+\usepackage{enumerate}
+\usepackage{natbib}
+\usepackage{eurosym}
+\usepackage{caption}
+\usepackage{longtable}
+\usepackage{multirow, multicol,booktabs}
+\usepackage[a4paper,bindingoffset=1cm,%
+            left=2.5cm,right=3cm,top=3cm,bottom=3cm,%
+            footskip=1cm]{geometry}
+
+\bibliographystyle{agsm}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%\DeclareUnicodeCharacter{2061}{}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{pdfpages}
+\usepackage{ulem}
+\doublespacing
+
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+
+\usepackage{titlesec}
+\setlength{\parindent}{0pt} 
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\providecommand{\keywords}[1]
+{
+  \small	
+  \textbf{\textit{Keywords---}} #1
+}
+
+\date{}
+
+\renewcommand{\baselinestretch}{1.2}
+\newcommand{\commentaire}[1]{}
+\addto\captionsfrench{\renewcommand{\tablename}{Tableau}}
+
+
+
+\title{L'auto-protection influence-t-elle les choix d'assurance des individus ? Une étude expérimentale}
+
+
+\date{}
+
+\begin{document}
+
+
+\maketitle
+
+\begin{center}
+\textbf{Tableaux et figures}
+\end{center}
+
+\section{Tableaux}
+
+
+\begin{longtable}[c]{ccc}
+\caption{Valeurs des paramètres}
+\label{tab:parameters}\\
+
+\hline\hline
+Paramètre&Définition&Valeurs\\
+\hline
+\endfirsthead
+
+\hline
+Paramètre&Définition&Valeurs\\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+\hline\hline
+\endlastfoot
+$T$&Nombre de périodes&12\\
+$W$&Richesse initiale&1500\\
+$\bar{p}$&Probabilité de perte&\{0,2 ; 0,5\}\\
+$L$&Montant de la perte&\{600 ; 1500\}\\
+$J$&Taille du menu&4\\
+$\alpha$&Taux de couverture&\{0,4 ; 0,65 ; 0,80 ; 0,90\}\\
+$e$&Effort d'auto-protection&\{0,1,...,15\}\\
+$\lambda$&Taux de chargement&\{-0,2 ; 0 ; 0,2\}\\
+$c(e)$&Fonction de coût d'auto-protection&$c(e)=c e $ avec $
+c = \{6 ; 15\}$\\
+$p(e)$&Fonction de diminution du risque &$p(e)=\bar{p} - a e $ avec $ a=0,01$\\
+\end{longtable}
+
+\newpage
+
+
+\footnotesize
+
+\begin{longtable}[c]{cccc}
+\caption{Description des options disponibles selon les traitements}
+\label{tab:treatment_option} \\
+\hline
+       Traitement & Choix de l'assurance & Taux de couverture & Auto-protection \\
+
+\hline
+\endfirsthead
+
+\hline\hline
+         Traitement & Choix de l'assurance & Taux de couverture & Auto-protection \\
+
+\hline
+\endhead
+
+\hline
+\endfoot
+
+\hline \hline
+\endlastfoot
+\textit{Assurance + Auto-protection} & Choix du contrat  &  $\alpha \in \{0,40;0,65;0,80;0,90\}$ & Disponible \\
+\textit{Assurance} & Choix du contrat &  $\alpha \in \{0,40;0,65;0,80;0,90\}$ & Non disponible \\
+\textit{Auto-protection} & Contrat imposé &  $\alpha \in \{0,40;0,65;0,80;0,90\}$ & Disponible \\
+
+\end{longtable}
+\normalsize
+
+\newpage
+
+
+\footnotesize
+
+\begin{longtable}[c]{ccc}
+\caption{Description des programmes d'optimisation selon les traitements}
+\label{tab:treatment_opti} \\
+\hline
+       Traitement & Programme d'optimisation & Variables de décision \\
+
+\hline
+\endfirsthead
+
+\hline\hline
+         Traitement & Programme d'optimisation & Variables de décision \\
+
+\hline
+\endhead
+
+\hline
+\endfoot
+
+\hline \hline
+\endlastfoot
+\textit{Assurance + Auto-protection} & $(\alpha^*,e^*)=argmax~EU(\alpha,e)$ & $\alpha \in \{0,40;0,65;0,80;0,90\}$ et $0 \le e \le 15$ \\
+\textit{Assurance} & $\alpha^*=argmax~EU(\alpha,0)$ &$ \alpha \in \{0,40;0,65;0,80;0,90\}$\\
+\textit{Auto-protection} & $e^*=argmax~EU(\bar{\alpha} ,e)$ &  $0 \le e \le 15$\\
+\end{longtable}
+{\footnotesize Notes : $\bar{\alpha}$ est attribué à chaque participant de manière aléatoire, avec une probabilité équivalente ($1/4$) parmi les valeurs possibles de $\alpha \in \{0,40; 0,65; 0,80; 0,90\}$. \\
+\normalsize
+\newpage
+
+\footnotesize
+
+\begin{longtable}[c]{lcccccccc}
+\caption{Description de l'échantillon en fonction du traitement}
+\label{tab:sample} \\
+\hline\hline
+        & \multicolumn{1}{c}{N}& \multicolumn{1}{c}{N. Obs.}& \multicolumn{2}{c}{Âge} & \multicolumn{2}{c}{Sexe} & \multicolumn{2}{c}{Niveau d'éducation}\\
+        & & & \textit{Moy.} & \textit{Écart-type} & \textit{Homme} & \textit{Femme} & \textit{Licence} & \textit{Master} \\
+\hline
+\endfirsthead
+
+\hline\hline
+          & \multicolumn{1}{c}{N}& \multicolumn{1}{c}{N. Obs.}& \multicolumn{2}{c}{Âge} & \multicolumn{2}{c}{Sexe} & \multicolumn{2}{c}{Niveau d'éducation}\\
+        & & & \textit{Moy.} & \textit{Écart-type} & \textit{Homme} & \textit{Femme} & \textit{Licence} & \textit{Master} \\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+\hline\hline
+\endlastfoot
+\textit{Assurance + Auto-protection} & 47 & 564 & 23,01 & 2,53 & 63,8\% & 36,2\% & 32\% & 68\% \\
+\textit{Assurance} & 33 & 396 & 22,50 & 2,75 & 72,7\% & 27,3\% & 39\% & 61\%\\
+\textit{Auto-protection} & 43 & 516 & 22,33 & 2,40 & 65,1\% & 34,9\% & 33\% & 67\% \\
+Total & 123 & 1476 & 22,66 & 2,55 & 66,7\% & 33,3\% & 34\% & 66\%\\
+\end{longtable}
+
+\normalsize
+
+
+\newpage
+
+
+
+\footnotesize
+
+\begin{longtable}[c]{lc@{\hspace{0mm}}lc@{\hspace{0mm}}lc@{\hspace{0mm}}l}
+\caption{Analyses multivariées du choix d'assurance ($\alpha$)}
+\label{tab:insurance_main_results} \\
+\hline\hline
+        &\multicolumn{2}{c}{Modèle 1}&\multicolumn{2}{c}{Modèle 2}&\multicolumn{2}{c}{Modèle 3}\\
+        &\multicolumn{2}{c}{Choix}&\multicolumn{2}{c}{P($\alpha=0,40$)}&\multicolumn{2}{c}{P($\alpha=0,90$)}\\
+        &\multicolumn{2}{c}{d'assurance}&\\
+\hline
+\endfirsthead
+
+\hline\hline
+         &\multicolumn{2}{c}{Modèle 1}&\multicolumn{2}{c}{Modèle 2}&\multicolumn{2}{c}{Modèle 3}\\
+        &\multicolumn{2}{c}{Choix}&\multicolumn{2}{c}{P($\alpha=0,40$)}&\multicolumn{2}{c}{P($\alpha=0,90$)}\\
+        &\multicolumn{2}{c}{d'assurance}&\\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+\hline\hline
+\endlastfoot
+\textbf{\textit{Caractéristiques individuelles}} \\
+\textbf{Genre} \\
+Femme & Réf. && Réf. && Réf. &\\
+Homme       &           0,091   &      &       0,784&\sym{**}       &       0,490    &     \\
+                    &     (0,289)  &             &     (0,356)      &          &     (0,351)  &       \\
+
+ \\
+  \textbf{Aversion au risque}                &          0,118     &          &     -0,050   &      &       0,188    &    \\
+                  &     (0,099)   &           &     (0,186)    &     &     (0,120)       &  \\
+\hline
+\textit{\textbf{Paramètres du risque}} \\
+\textbf{Probabilité de perte ($\bar{p}$)} \\
+Faible probabilité ($\bar{p}=0,2$) & Réf.& & Réf.& & Réf.& \\
+Forte probabilité  ($\bar{p}=0,5$)        &       0,461&\sym{***}&      -1,069&\sym{***}&     -0,001   &     \\
+                  &     (0,124)     &        &     (0,102)    &    &    (0,158)   &      \\
+
+\textbf{Montant de perte ($L$)} \\
+Faible perte ($L=600$) & Réf.& & Réf. && Réf. &\\
+Forte perte ($L=1500$)  &       0,645&\sym{***}        &      -0,546&\sym{***} &       0,648&\sym{***}\\
+                  &     (0,124) &    &     (0,100)&       &    (0,160)      &   \\
+\hline
+\textbf{\textit{Caractéristiques du contrat}} \\
+\textbf{Taux de chargement ($\lambda$)} \\
+Nul ($\lambda=0$) & Réf.& & Réf.& & Réf. &\\
+Négatif  ($\lambda=-0,2$)&        0,331&\sym{**} &        -0,469&\sym{**} &      0,124   &     \\
+                  &     (0,151)    &            &     (0,218)  &     &     (0,189)    &     \\
+Positif ($\lambda=0,2$)&         -0,424&\sym{***}&        0,270  &       &          -0,715&\sym{***}\\
+                  &     (0,150)      &          &     (0,204)     &     &     (0,199)  &       \\
+\hline
+\textbf{\textit{Traitement}} \\
+\textit{Assurance} & Réf. && Réf.& & Réf. &\\
+\textit{Assurance + Auto-protection}       &      -0,226      &          &       0,715&\sym{**}                      &     -0,081    &     \\
+                           &     (0,276)  &       &                        (0,330)  &       &              (0,329)    &     \\
+\hline
+Constante      &        -      &      &      -1,341&\sym{*}        &      -2,486&\sym{***}\\
+&              &       &     (0,809)   &      &   (0,828)         \\
+Seuil 1     &      -0,326& &           -    &      &            -     &     \\
+                  &     (0,682)    &     &                         \\
+
+Seuil 2            &       0,831    &     &        -         &    &          -      &          \\
+                    &     (0,682)   &      &                             \\
+Seuil 3            &       1,540&\sym{***}&       -       &       &           -        &        \\
+                   &     (0,383)    &     &                                   \\
+\hline
+\(N\)            &         \multicolumn{2}{c}{960}                &        \multicolumn{2}{c}{960}            &      \multicolumn{2}{c}{960}           \\
+\end{longtable}
+{\footnotesize Notes: Significativité : $^{*}$ = 10\% $^{**}$ = 5\% $^{***}$ = 1\%. Les écart-types sont entre parenthèses. Toutes les régressions comprennent des effets aléatoires. } \\
+\normalsize
+
+
+\newpage
+
+
+\footnotesize
+\begin{longtable}[c]{l*{1}{c}@{\hspace{0mm}}l}
+\caption{Analyses multivariées du niveau d'effort d'auto-protection $e$}
+\label{tab:sp_main_results} \\
+
+\hline\hline
+            &\multicolumn{2}{c}{$e$}\\
+\hline
+\endfirsthead
+
+\hline\hline
+            &\multicolumn{2}{c}{$e$}\\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+\hline \hline
+\endlastfoot
+\textit{\textbf{Caractéristiques individuelles}} & \\
+\textbf{Genre} & \\
+Femme  & Réf. \\
+Homme            &       1,126         \\
+                  &     (0,778)            \\
+ & \\
+\textbf{Aversion au risque}      &      -0,367              \\
+                  &     (0,319)         \\
+\hline
+\textit{\textbf{Paramètres du risque}} & \\
+\textbf{Probabilité de perte ($\bar{p}$)} &\\
+Faible probabilité ($\bar{p}=0,2$) & Réf. \\ 
+Forte probabilité ($\bar{p}=0,5$)    &       0,646&\sym{**}  \\
+               &     (0,290)        \\
+\textbf{Montant de la perte ($L$)} & \\
+Faible perte ($L=600$)  & Réf. \\
+Forte perte ($L=1 500$)  &      -1,700&\sym{***}\\
+                 &     (0,290)               \\
+\hline
+\textit{\textbf{Caractéristiques du contrat}} & \\
+\textbf{Taux de chargement ($\lambda$) }& \\
+Nul ($\lambda=0$)  & Réf. \\
+Négatif ($\lambda=-0,2$)         &       0,739&\sym{**} \\
+                  &     (0,352)             \\
+Positif ($\lambda=0,2$)       &       0,748&\sym{**} \\
+                  &     (0,351)               \\
+\textbf{Taux de couverture ($\alpha$)} & \\
+40\% & Réf. \\
+
+65\% &    -2,609&\sym{***}\\
+                &     (0,588)          \\
+80\%  &      -3,782&\sym{***} \\
+                 &     (0,653)                \\
+90\%  &       -4,619&\sym{***}      \\
+                  &     (0,595)      \\
+%\textbf{Traitement }& \\
+%Traitement \textit{Assurance}  & Réf.  \\
+%Traitement \textit{Assurance + Prévention} & -0,944 \\
+%& (0,875) \\
+\textbf{Taux de couverture $\times$ Traitement} \\
+40\% $\times$ Traitement \textit{Assurance + Auto-protection}      &   -1,602&\sym{*}    \\
+                  &     (0,909)             \\
+65\% $\times$ Traitement \textit{Assurance + Auto-protection} &      0,359\\
+                 &     (0,934)     \\
+80\% $\times$ Traitement \textit{Assurance + Auto-protection} &     -0,228 \\
+                  &     (0,953)               \\
+90\% $\times$ Traitement \textit{Assurance + Auto-protection} &     -0,933 \\
+                  &     (0,889)               \\
+
+\hline
+Constante     &            10,458&\sym{***}\\
+                &     (2,073)            \\
+\hline
+N             &      \multicolumn{2}{c}{1080}        \\
+\end{longtable}
+{\footnotesize Notes: Significativité : $^{*}$ = 10\% $^{**}$ = 5\% $^{***}$ = 1\%. Les écart-types sont entre parenthèses. La régression inclut des effets aléatoires. } \\
+
+\normalsize
+\newpage
+
+
+\begin{longtable}[c]{c|cccc|c|cccc|c|c}
+\caption{Élicitation de l'aversion au risque}
+\label{tab:Holt_Laury}\\
+
+\hline\hline
+Décision &\multicolumn{4}{c}{Option A} &E(A)&\multicolumn{4}{c}{Option B} & E(B) & E(A)-E(B)\\
+\hline
+\endfirsthead
+
+\hline
+Décision &\multicolumn{4}{c}{Option A} & E(A)&\multicolumn{4}{c}{Option B} & E(B) &E(A)-E(B)\\
+
+
+\hline
+\endhead
+
+\hline
+\endfoot
+
+\hline\hline
+\endlastfoot
+1 & 10\% & -400 & 90\% & -450 &-445 & 10\% & -100 & 90\% & -800 & -820 & 375\\
+2 & 20\% &-400 & 80\% & -450 & -440 &20\% & -100 & 80\% & -800 & -740 & 300\\
+3 & 30\% &-400 & 70\% & -450 & -435 &30\% & -100 & 70\% & -800 & -660 & 225\\
+4 & 40\% &-400 & 60\% & -450 & -430 & 40\% & -100 & 60\% & -800 & -580 & 150\\
+5 & 50\% &-400 & 50\% & -450 & -425 & 50\% & -100 & 50\% & -800 & -500 & 75\\
+6 & 60\% &-400 & 40\% & -450 & -420 & 60\% & -100 & 40\% & -800 & -420 & 0\\
+7 & 70\% &-400 & 30\% & -450 & -415 & 70\% & -100 & 30\% & -800 & -340 & -75\\
+8 & 80\% &-400 & 20\% & -450 & -410 & 80\% & -100 & 20\% & -800 & -260 & -150\\
+9 & 90\% &-400 & 10\% & -450 & -405 & 90\% & -100 & 10\% & -800 & -180 & -225\\
+10 & 100\% &-400 & 0\% & -450 & -400 & 100\% & -100 & 0\% & -800 & -100 & -300\\
+\end{longtable}
+
+
+
+
+
+\normalsize
+
+
+\newpage
+
+
+\footnotesize
+
+
+
+\footnotesize
+\begin{longtable}[c]{l*{1}{c}@{\hspace{0mm}}l}
+\caption{Analyses multivariées de l'effort d'auto-protection $P(e=0)$}
+\label{tab:control_supply} \\
+\hline\hline
+            &\multicolumn{2}{c}{$P(e=0)$}\\
+\hline
+\endfirsthead
+\hline\hline
+            &\multicolumn{2}{c}{$P(e=0)$}\\
+\hline
+\endhead
+\hline
+\endfoot
+\hline \hline
+\endlastfoot
+\textit{\textbf{Caractéristiques individuelles}} & \\
+\textbf{Genre} & \\
+Femme  & Réf. \\
+Homme            &       -0,167          \\
+                  &     (0,417)            \\
+ & \\
+\textbf{Aversion au risque}     &      0,209              \\
+                  &     (0,170)         \\
+\hline
+\textit{\textbf{Paramètres du risque}} & \\
+\textbf{Probabilité de perte ($\bar{p}$)} &\\
+Faible probabilité ($\bar{p}=0,2$) & Réf. \\ 
+Forte probabilité ($\bar{p}=0,5$)    &       -0,141 \\
+               &     (0,162)        \\
+\textbf{Montant de perte ($L$)} & \\
+Faible perte ($L=600$)  & Réf. \\
+Forte perte ($L=1 500$)  &      0,676&\sym{***}\\
+                 &     (0,164)               \\
+\hline
+\textit{\textbf{Caractéristiques du contrat}} & \\
+\textbf{Taux de chargement ($\lambda$) }& \\
+Nul ($\lambda=0$)  & Réf. \\
+Négatif ($\lambda=-0,2$)         &       -0,381&\sym{**} \\
+                  &     (0,197)             \\
+Positif ($\lambda=0,2$)       &       -0,351&\sym{*} \\
+                  &     (0,197)               \\
+\textbf{Taux de couverture ($\alpha$)} & \\
+40\% & Réf. \\
+65\% &    0,599&\sym{**}\\
+                &     (0,256)          \\
+80\%  &      1,185&\sym{***} \\
+                 &     (0,265)                \\
+90\%  &       2,271&\sym{***}      \\
+                  &     (0,257)      \\
+\textbf{Traitement }& \\
+Traitement \textit{Assurance}  & Réf.  \\
+Traitement \textit{Assurance + Auto-protection} & -0,401 \\
+& (0,399) \\
+\hline
+Constante     &           -2,777&\sym{***}\\
+                &     (1,107)            \\
+\hline
+N             &        1 080          \\
+\end{longtable}
+{\footnotesize Notes : Significativité : $*$ = 10\% $**$ = 5\% $***$ = 1\%. Les écart-types sont entre parenthèses. La régression inclut des effets aléatoires. } \\
+
+\newpage
+
+\section{Figures}
+
+\begin{center}
+\captionof{figure}{Choix d'assurance ($\alpha$) en fonction du traitement}
+\includegraphics[scale=0.5]{Figures/distrib_couv_treatment_english.png}
+\label{fig:sp_couv}
+\end{center}
+
+\newpage
+
+\begin{center}
+    \captionof{figure}{Niveau moyen d'effort d'auto-protection ($e$) en fonction du traitement}
+    \includegraphics[scale=0.5]{Figures/insuranceandprevandprev__effort.png}
+    \label{fig:sp_treatment}
+\end{center}
+
+\end{document}
+
