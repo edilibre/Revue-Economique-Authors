@@ -2,6 +2,16 @@
 \ProvidesClass{Revue-economique}[2024/05/26 Classe de document pour la revue économique]
 \LoadClass[10pt]{book} % Charge la classe book avec une taille de police de 10pt
 
+\newif\if@ecran % Crée un commutateur pour l'affichage à l'écran
+\newif\if@impression % Crée un commutateur pour l'impression
+\newif\if@prepacopie % Crée un commutateur pour la préparation de copie
+
+\DeclareOption{ecran}{\@ecrantrue\@impressionfalse} % Active l'affichage à l'écran
+\DeclareOption{impression}{\@impressiontrue\@ecranfalse} % Active l'affichage pour impression
+\DeclareOption{prepacopie}{\@prepacopietrue} % Active l'affichage pour la préparation de copie
+\ExecuteOptions{ecran} % Par défaut, l'affichage est configuré pour l'écran
+\ProcessOptions\relax % Traite les options du document
+
 % Packages linguistiques
 \RequirePackage[english,french]{babel}
 \frenchsetup{og=«,fg=»}
@@ -9,7 +19,7 @@
 % Packages supplémentaires
 \RequirePackage{changes} % Pour le suivi des modifications et les commentaires éditoriaux
 \RequirePackage{graphicx} % Pour la gestion des images
-\usepackage[absolute,overlay]{textpos}
+\RequirePackage[absolute,overlay]{textpos}
 
 \setlength{\TPHorizModule}{1mm}  % Définit l'unité de mesure horizontale (ici en millimètres)
 \setlength{\TPVertModule}{1mm}   % Définit l'unité de mesure verticale (ici en millimètres)
@@ -19,30 +29,78 @@
 \iflanguage{english}{}{%
     \def\frenchtablename{Tableau}
 }
-\captionsetup{textfont=it, aboveskip=15pt, skip=3pt, justification=centering}
+\captionsetup{textfont=it, aboveskip=15pt, skip=3pt, justification=centering, labelsep=endash, position=above}
 \usepackage{subcaption} % Pour la gestion des figures contenant des sous-figures
-\RequirePackage{pdflscape} % Pour la gestion des pages en mode paysage
+\RequirePackage{pdflscape,afterpage} % Pour la gestion des pages en mode paysage
 \RequirePackage{xcolor} % Pour la gestion des couleurs
 \RequirePackage{geometry} % Pour le format des pages
-\geometry{
-    paperwidth=155mm,
-    paperheight=240mm,
-    top=22mm,
-    bottom=22mm,
-    inner=18mm,
-    outer=25mm,
-    footskip=12mm,
-    footnotesep=12mm plus 1pt minus 1pt
-}
+\if@ecran
+    \geometry{
+        paperwidth=155mm,
+        paperheight=240mm,
+        top=22mm,
+        bottom=22mm,
+        inner=18mm,
+        outer=25mm,
+        footskip=12mm,
+        footnotesep=12mm plus 1pt minus 1pt
+    }
+\fi
+\if@prepacopie
+    \geometry{
+        paperwidth=210mm,
+        paperheight=297mm,
+        top=22mm,
+        bottom=35mm,
+        inner=35mm,
+        outer=35mm,
+        footskip=12mm,
+        footnotesep=12mm plus 1pt minus 1pt
+    }
+    \renewcommand\normalsize{%
+       \@setfontsize\normalsize{12pt}{14.5pt}%
+    }
+    \AtBeginEnvironment{Article}{%
+    \begin{tikzpicture}[remember picture, overlay]
+      \node[rotate=90, anchor=north] at (current page.west) {préparation de copie, compilation du \today};
+    \end{tikzpicture}}
+  \fi
+  \if@impression
+  \geometry{
+      paperwidth=210mm,
+      paperheight=240mm,
+      layoutwidth=155mm,
+      layoutheight=240mm,
+      top=22mm,
+      bottom=22mm,
+      inner=18mm,
+      outer=25mm,
+      footskip=12mm,
+      footnotesep=12mm plus 1pt minus 1pt,
+      showcrop,
+      layouthoffset=27.5mm,
+      layoutvoffset=0mm
+  }
+\fi
+\usepackage{changepage}
 
-\RequirePackage[skip=1pt plus 1pt minus 1pt]{parskip} % Pour la gestion des paragraphes
+% Options pour les notes de bas de page
+\usepackage[bottom]{footmisc} % Force les notes en bas de page
 
-% \RequirePackage[cam,center,width=210mm,height=297mm]{crop}
+\RequirePackage[skip=1pt]{parskip} % Pour la gestion des paragraphes
 
 % Packages supplémentaires pour la gestion avancée des tableaux
 \RequirePackage{array,colortbl} % Pour la personnalisation des colonnes de tableau
 \RequirePackage{tabularx} % Pour la gestion des tableaux à largeur fixe
 \RequirePackage{booktabs} % Pour des lignes horizontales de meilleure qualité
+\RequirePackage{tabularray} % tableaux en LaTeX3
+\DefTblrTemplate{caption-sep}{default}{\enskip--\enskip} % harmoniser les légendes de tableaux
+\DefTblrTemplate{contfoot-text}{default}{\iflanguage{english}{Continued on next page}{(Suite page suivante)}}
+\DefTblrTemplate{conthead-text}{default}{\iflanguage{english}{(Continued)}{(Suite)}}
+\UseTblrLibrary{amsmath}
+\UseTblrLibrary{booktabs}
+\UseTblrLibrary{siunitx}
+
 \RequirePackage{threeparttable} % pour englober les tableaux dans un environnement spécifique
 \RequirePackage{longtable,calc}
 \RequirePackage{multirow} % Pour fusionner des cellules sur plusieurs lignes
@@ -50,6 +108,24 @@
 \RequirePackage{amsmath} % Pour les fonctionnalités mathématiques avancées
 \counterwithout{equation}{chapter} % Numérotation des équations sans le numéro de chapitre
 \RequirePackage{amssymb} % Pour les symboles mathématiques supplémentaires
+\RequirePackage{amsthm} % Pour les théorèmes et les preuves
+\addto\captionsenglish{%
+    \renewcommand{\proofname}{\textbf{Proof.} \quad}}
+\addto\captionsfrench{%
+    \renewcommand{\proofname}{\textbf{Preuve.} \quad}}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\renewenvironment{proof}[1][\proofname]
+ {%
+  \par
+  \pushQED{\qed}%
+  \normalfont \topsep6\p@\@plus6\p@\relax
+  \list{}{\leftmargin=\parindent\labelwidth=0pt}
+  \item[\hskip\labelsep\itshape #1\@addpunct{.}\hfill]\ignorespaces
+ }
+ {%
+  \popQED\endlist\@endpefalse
+ }
+
 \RequirePackage{amsfonts} % Pour les polices mathématiques supplémentaires
 \RequirePackage{siunitx}
 \RequirePackage{makecell}
@@ -101,7 +177,11 @@
 \RequirePackage{titlesec} 
 % Définition des titres de section de niveau 1
 \titleformat{\section}[block]
-{\normalfont\fontsize{11}{13}\selectfont\sffamily}{\thesection.}{1em}{\MakeUppercase}
+{\normalfont\fontsize{11}{13}\selectfont\sffamily}
+{\thesection.}
+{1em} % était 1em
+{\MakeUppercase}
+
 \titlespacing*{\section}{0pt}{8mm}{5mm}
 
 % Définition des titres de section de niveau 2
@@ -117,9 +197,18 @@
 % Packages pour le développement de fonctions avancées
 \RequirePackage{etoolbox}
 \RequirePackage{xkeyval} % Pour la gestion des clés
+
 % Packages pour la gestion des liens 
 \RequirePackage[breaklinks]{hyperref}
-\RequirePackage{xurl}
+\if@ecran
+  \hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
+\else
+  \hypersetup{colorlinks=false,pdfborder={0 0 0}}
+  \AtBeginDocument{\begin{NoHyper}}
+  \AtEndDocument{\end{NoHyper}}
+  \RequirePackage[center,a4]{crop}
+\fi
+
 % Package pour la gestion des bibliographies
 \RequirePackage[babel]{csquotes}
 
@@ -130,15 +219,71 @@
   articlein=false,
   backend=biber, 
   language=autobib, 
+  doi=false,
   autolang=other, 
-  doi=false, 
   isbn=false, 
   url=false, 
-  eprint=false]{biblatex}
+  eprint=false,
+  maxcitenames=1, % Maximum 1 auteurs dans les citations
+  mincitenames=1, % Utiliser "et al." au-delà de 1 auteurs
+  maxbibnames=3,  % Maximum 3 auteurs dans la bibliographie
+  minbibnames=1   % Utiliser "et al." au-delà de 1 auteurs dans la bibliographie
+]{biblatex}
 \DeclareInnerCiteDelims{parencite}{[}{]}
 \DeclareInnerCiteDelims{textcite}{[}{]}
 \DeclareFieldFormat{biblabeldate}{[#1]}
 
+% Virgule et non deux points entre la ville et l'éditeur
+\renewbibmacro*{publisher+location+date}{%
+  \printlist{location}%
+  \setunit{\addcomma\space}%
+  \printlist{publisher}%
+  \setunit{\addcomma\space}%
+  \usebibmacro{date}%
+  \newunit}
+
+% Suppression de la mention "rapp. tech."
+\DeclareFieldFormat[report]{type}{}
+\DeclareFieldFormat[report]{number}{}
+\DeclareBibliographyAlias{techreport}{report}
+
+\DeclareBibliographyDriver{report}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \usebibmacro{author/editor}%
+  \setunit{\labelnamepunct}\newblock
+  \usebibmacro{title}%
+  \newunit
+  \printlist{language}%
+  \newunit\newblock
+  \usebibmacro{byauthor}%
+  \newunit\newblock
+  \usebibmacro{byeditor}%
+  \newunit\newblock
+  \printfield{note}%
+  \newunit\newblock
+  \usebibmacro{institution+location+date}%
+  \newunit\newblock
+  \usebibmacro{chapter+pages}%
+  \newunit
+  \printfield{pagetotal}%
+  \newunit\newblock
+  \iftoggle{bbx:isbn}
+    {\printfield{isbn}}
+    {}%
+  \newunit\newblock
+  \usebibmacro{doi+eprint+url}%
+  \newunit\newblock
+  \usebibmacro{addendum+pubstate}%
+  \setunit{\bibpagerefpunct}\newblock
+  \usebibmacro{pageref}%
+  \newunit\newblock
+  \iftoggle{bbx:related}
+    {\usebibmacro{related:init}%
+     \usebibmacro{related}}
+    {}%
+  \usebibmacro{finentry}%
+}
 
 % Configuration pour l'ordre des auteurs
 \DeclareNameAlias{sortname}{last-first}
@@ -178,9 +323,9 @@
   \printfield{eid}}
 \DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
 
-% Supprimer "pp." des bibliographies
-\DeclareFieldFormat[article, incollection, unpublished]{pages}{#1}
-\renewcommand{\bibpagespunct}{\ifentrytype{article}{\addcolon\addspace}{\addperiod\addspace}}
+% Supprimer "pp." des bibliographies ?
+% \DeclareFieldFormat[article, incollection, unpublished]{pages}{#1}
+% \renewcommand{\bibpagespunct}{\ifentrytype{article}{\addcolon\addspace}{\addperiod\addspace}}
 
 % Redéfinir le style de "et al." dans la bibliographie
 \renewbibmacro*{name:andothers}{% Based on name:andothers from biblatex.def
@@ -205,6 +350,12 @@
 
 % Supprimer les petites caps des titres en français
 \DefineBibliographyExtras{french}{\restorecommand\mkbibnamefamily}
+
+% Configuration spécifique pour les articles en français 
+\DefineBibliographyExtras{french}{% 
+\DeclareNameAlias{default}{last-first} 
+\renewcommand*{\revsdnamepunct}{} % Supprimer la virgule entre le nom et le prénom 
+}
 
 % Virgules après le journal
 \DeclareFieldFormat{journaltitle}{\mkbibemph{#1}\isdot}
@@ -231,7 +382,7 @@
 \AtBeginEnvironment{appendices}{
     \vspace{2\baselineskip}
     \begin{center}
-        \itshape\iflanguage{english}{APPENDIX}{ANNEXES}
+        \itshape\iflanguage{english}{\appendixname}{\appendixname}
     \end{center}
     \setcounter{figure}{0}
     \setcounter{table}{0}
@@ -251,38 +402,92 @@
 \AtEndEnvironment{appendices}{
     \renewcommand{\thefigure}{\arabic{figure}}
     \renewcommand{\thetable}{\arabic{table}}
-    \setcounter{secnumdepth}{-1}
+    \setcounter{secnumdepth}{2}
 }
 
 % Commandes pour la définition des auteurs des articles.
 % Chaque auteur est défini à l'aide du package keyval par la clé Auteur={}.
-\define@key{article}{Auteur}{%
-    \def\Auteur{%
-        {\raggedleft #1\par\vspace{.5cm}}
-        \renewcommand{\titrecourantauteur}{\makeatletter
-        \let\@oldthanks\thanks
-        \renewcommand{\thanks}[1]{}
-        \makeatother #1}%
-    }%
-}
+\if@ecran
+    \define@key{article}{Auteur}{%
+        \def\Auteur{%
+            {\raggedleft #1\par\vspace{.5cm}}
+            \renewcommand{\titrecourantauteur}{\makeatletter
+            \let\@oldthanks\thanks
+            \renewcommand{\thanks}[1]{}
+            \makeatother #1}%
+        }%
+    }
+    \fi
+    \if@prepacopie
+    \define@key{article}{Auteur}{%
+        \def\Auteur{%
+            {\centering #1\par\vspace{.5cm}}
+            \renewcommand{\titrecourantauteur}{\makeatletter
+            \let\@oldthanks\thanks
+            \renewcommand{\thanks}[1]{}
+            \makeatother #1}%
+        }%
+    }
+    \fi
+    \if@impression
+    \define@key{article}{Auteur}{%
+        \def\Auteur{%
+            {\raggedleft #1\par\vspace{.5cm}}
+            \renewcommand{\titrecourantauteur}{\makeatletter
+            \let\@oldthanks\thanks
+            \renewcommand{\thanks}[1]{}
+            \makeatother #1}%
+        }%
+    }
+\fi
 
 % Commande pour redéfinir localement le titre courant des auteurs (cas où auteurs > 3 par exemple)
 \newcommand{\titrecourantauteuretal}[1]{%
     \renewcommand{\titrecourantauteur}{#1}
 }
 
-\define@key{article}{Titre}{%
-    \def\Titre{%
-        {%
-            \normalfont\fontsize{18}{22}\selectfont\raggedleft #1\par\normalsize\vspace{0.5cm}%
+\if@ecran
+    \define@key{article}{Titre}{%
+        \def\Titre{%
+            {%
+                \normalfont\fontsize{18}{22}\selectfont\raggedleft #1\par\normalsize\vspace{0.5cm}%
+            }%
+            \noindent\hrulefill% Ligne horizontale après le titre
+            \par\vspace{0.5cm}% Espace vertical après la ligne horizontale
+            \thispagestyle{OuvertureArticle} % Utilise le style fancy pour les en-têtes et pieds de page
+            \pagestyle{CourantArticle} % Utilise le style fancy pour les en-têtes et pieds de page
         }%
-        \noindent\hrulefill% Ligne horizontale après le titre
-        \par\vspace{0.5cm}% Espace vertical après la ligne horizontale
-        \thispagestyle{OuvertureArticle} % Utilise le style fancy pour les en-têtes et pieds de page
-        \pagestyle{CourantArticle} % Utilise le style fancy pour les en-têtes et pieds de page
-    }%
-    \renewcommand{\titrecourantarticle}{\def\\{}#1}
-}
+        \renewcommand{\titrecourantarticle}{\def\\{}#1}
+    }
+    \fi
+\if@impression
+    \define@key{article}{Titre}{%
+        \def\Titre{%
+            {%
+                \normalfont\fontsize{18}{22}\selectfont\raggedleft #1\par\normalsize\vspace{0.5cm}%
+            }%
+            \noindent\hrulefill% Ligne horizontale après le titre
+            \par\vspace{0.5cm}% Espace vertical après la ligne horizontale
+            \thispagestyle{OuvertureArticle} % Utilise le style fancy pour les en-têtes et pieds de page
+            \pagestyle{CourantArticle} % Utilise le style fancy pour les en-têtes et pieds de page
+        }%
+        \renewcommand{\titrecourantarticle}{\def\\{}#1}
+    }
+    \fi
+    \if@prepacopie
+    \define@key{article}{Titre}{%
+        \def\Titre{%
+            {%
+                \normalfont\sffamily\fontsize{18}{22}\selectfont\centering #1\par\normalsize\vspace{0.5cm}%
+            }%
+            \par\vspace{0.5cm}% Espace vertical après la ligne horizontale
+            \thispagestyle{OuvertureArticle} % Utilise le style fancy pour les en-têtes et pieds de page
+            \pagestyle{CourantArticle} % Utilise le style fancy pour les en-têtes et pieds de page
+        }%
+        \renewcommand{\titrecourantarticle}{\def\\{}#1}
+    } 
+\fi
+
 
 \newcounter{numeroarticle}
 \newenvironment{Article}[1][]{%
@@ -333,15 +538,16 @@
       \footnotetext{##1}%
     }%
   }%
-  \renewcommand\thefootnote{\@fnsymbol\c@footnote}%
+  \renewcommand\thefootnote{\alph{footnote}}%
 }
 %
 % \RE@UseThanks affiche les notes de bas de page.
 %
 \newcommand*\RE@UseThanks{%
   \setcounter{footnote}{0}%
-  \renewcommand\thefootnote{\@fnsymbol\c@footnote}%
-  \def\dotFFN{}% vide = pas de point après le symbole
+%  \renewcommand\thefootnote{\@fnsymbol\c@footnote}%
+ \renewcommand{\thefootnote}{\alph{footnote}}
+ \def\dotFFN{.}% vide = pas de point après le symbole
   \the\RE@hookfootnote
   % Code suivant réalisé avant le résumé quand il existe.
   % \def\dotFFN{.}%
@@ -350,7 +556,8 @@
 }
 \newcommand*\RE@UseThanksBis{%
   \setcounter{footnote}{0}%
-  \renewcommand\thefootnote{\@fnsymbol\c@footnote}%
+%  \renewcommand\thefootnote{\@fnsymbol\c@footnote}%
+  \renewcommand{\thefootnote}{\alph{footnote}}
   \def\dotFFN{}%
   \the\RE@hookfootnote
   % Code suivant non réalisé car pas de résumé.
@@ -364,6 +571,15 @@
     \par\vspace{6mm}% Espace vertical avant le titre anglais
     {%
         \selectlanguage{english}
+        \normalfont\fontsize{9}{11}\selectfont\scshape\raggedright #1\par%
+    }%
+    \par\vspace{3mm}% Espace vertical après le titre anglais
+}
+
+\newcommand{\titrearticleFR}[1]{%
+    \par\vspace{6mm}% Espace vertical avant le titre anglais
+    {%
+        \selectlanguage{french}
         \normalfont\fontsize{9}{11}\selectfont\scshape\raggedright #1\par%
     }%
     \par\vspace{3mm}% Espace vertical après le titre anglais
@@ -429,7 +645,7 @@
 % Construction semi-automatique du sommaire pour le moment
 \newenvironment{pagesommaire}{\newpage\thispagestyle{empty}%
 \begin{center}
-}{\end{center}\clearpage}
+}{\end{center}\cleardoublepage}
 
 \newcommand*{\volumetitrecourant}{\relax}
 \newcommand*{\numerotitrecourant}{\relax}
@@ -452,7 +668,9 @@
 \newcommand{\varstatsvar}[1]{%
     \raisebox{1.15ex}{\smaller #1}% Texte de taille réduite dans une boîte surélevée
 }
-
+\newcommand{\varstatsnopar}[1]{%
+    \raisebox{1.15ex}{\smaller (#1)}% Texte de taille réduite dans une boîte surélevée
+}
 
 % Commande pour définir la taille du texte des tableaux
 \newcommand{\tabletextsize}{%
@@ -463,18 +681,38 @@
 \AtBeginEnvironment{tabular}{\tabletextsize}
 \AtBeginEnvironment{tabularx}{\tabletextsize}
 \AtBeginEnvironment{longtable}{\tabletextsize}
+\AtBeginEnvironment{tblr}{\tabletextsize}
+\AtBeginEnvironment{longtblr}{\tabletextsize}
+\SetTblrStyle{caption-text}{font = \normalsize\itshape}
+\SetTblrStyle{caption-tag}{font = \normalsize\scshape}
 \newcolumntype{D}[1]{>{\raggedleft\arraybackslash}p{#1}}
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 \newcommand{\notedetableau}[1]{%
-    \par\vspace{\baselineskip}\begin{minipage}{\linewidth}
+    \par\vspace{\baselineskip}\noindent\begin{minipage}{\linewidth}
         \footnotesize \iflanguage{english}{\textit{Note:} #1}{\textit{Note :} #1}    
     \end{minipage}%
 }
-\newcommand{\sourcefigure}[1]{%
+\newcommand{\notedefigure}[1]{%
+    \par\vspace{\baselineskip}\noindent\begin{minipage}{\linewidth}
+        \footnotesize \iflanguage{english}{\textit{Note:} #1}{\textit{Note :} #1}    
+    \end{minipage}%
+}
+\newcommand{\source}[1]{%
     \par\medskip\begin{minipage}{\linewidth}
         \footnotesize \iflanguage{english}{\textit{Source:} #1}{\textit{Source :} #1}    
     \end{minipage}%
+}
+\newcommand{\sources}[1]{%
+    \par\medskip\begin{minipage}{\linewidth}
+        \footnotesize \iflanguage{english}{\textit{Sources:} #1}{\textit{Sources :} #1}    
+    \end{minipage}%
+}
+\newcommand{\legende}[1]{%
+    \par\medskip\noindent
+    \begin{minipage}{\linewidth}
+        \footnotesize #1    
+    \end{minipage}\par\medskip%
 }
 
 % environnement résultat
@@ -482,7 +720,7 @@
 \newsavebox{\RE@resultatbox}
 \newenvironment{resultat}
   {\refstepcounter{resultat}%
-   \par\medskip\noindent%
+   \par\vspace{\baselineskip}\noindent%
    \begin{lrbox}{\RE@resultatbox}%
    \hspace*{2.5mm}\begin{minipage}{\dimexpr\linewidth-2mm\relax}%
    \textsc{Résultat \theresultat.}\quad}
@@ -497,7 +735,7 @@
 \newsavebox{\RE@lemmebox}
 \newenvironment{lemme}
   {\refstepcounter{lemme}%
-   \par\medskip\noindent%
+    \par\vspace{\baselineskip}\noindent%
    \begin{lrbox}{\RE@lemmebox}%
    \hspace*{2.5mm}\begin{minipage}{\dimexpr\linewidth-2mm\relax}%
    \textbf{Lemme \thelemme.}\quad}
@@ -507,34 +745,51 @@
    \makebox[0pt][l]{\rule[-\dp\RE@lemmebox]{1pt}{\dimexpr\ht\RE@lemmebox+\dp\RE@lemmebox\relax}}%
    \usebox{\RE@lemmebox}\par\medskip}
 
-% Environnement Proposition, clone de l'environnement Resultat
+% Environnement Proposition
+
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable} % Charger les bibliothèques nécessaires
+
 \newcounter{proposition}[chapter] % Définir le compteur "proposition" et le réinitialiser à chaque nouveau chapitre
-\newsavebox{\RE@propositionbox}
+
 \newenvironment{proposition}
-  {\refstepcounter{proposition}%
-   \par\vspace{\baselineskip}\noindent%
-   \begin{lrbox}{\RE@propositionbox}%
-   \hspace*{2.5mm}\begin{minipage}{\dimexpr\linewidth-2mm\relax}%
-   \textsc{Proposition \theproposition.}\quad \itshape}
-  {\end{minipage}%
-   \end{lrbox}%
-   \noindent%
-   \makebox[0pt][l]{\rule[-\dp\RE@propositionbox]{1pt}{\dimexpr\ht\RE@propositionbox+\dp\RE@propositionbox\relax}}%
-   \usebox{\RE@propositionbox}\par\medskip}
+  {%
+    \refstepcounter{proposition}%
+    \par%
+    \begin{tcolorbox}[
+      enhanced, % Activer les fonctionnalités avancées
+      breakable, % Permettre la rupture de la boîte sur plusieurs pages
+      colback=white, % Fond blanc
+      colframe=white, % Pas de bordure visible
+      boxrule=0pt, % Pas de bordure
+      left=2.5mm,
+      right=0mm, 
+      beforeafter skip=1mm,
+      overlay={%
+        \draw[line width=1pt] ([yshift=2.5mm]frame.south west) -- ([yshift=-2.5mm]frame.north west); % Filet vertical à gauche
+      },
+      before upper={\textsc{Proposition \theproposition.}\quad\itshape}, % Mise en forme du titre
+    ]
+  }
+  {%
+    \end{tcolorbox}%
+    \par%
+  }
 
 % Environnement demonstration clône de l'environnement resultat
 \newenvironment{demonstration}
-  {\par\medskip\noindent%
-   \begin{minipage}{\linewidth}%
+  { \par\vspace{\baselineskip}%
+   \begin{minipage}{\linewidth-\parindent}%
    \textit{\textbf{Démonstration.}}\quad}
-  {\end{minipage}\par\medskip}
+  {\hfill \blacksquare
+  \end{minipage}\par\bigskip}
 
 % Environnement proof clône de l'environnement resultat
-\newenvironment{proof}
-  {\par\medskip\noindent%
-   \begin{minipage}{\linewidth}%
-   \textit{\textbf{Proof.}}\quad}
-  {\end{minipage}\par\medskip}
+% \newenvironment{proof}
+%   { \par\vspace{\baselineskip}%
+%    \begin{minipage}{\linewidth-\parindent}%
+%    \textit{\textbf{Proof.}}\quad}
+%   {\hfill \blacksquare\end{minipage}\par\bigskip}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -547,7 +802,7 @@
 % jamais de césure aux mots qui commencent par une lettre capitale
 \uchyph=0
 \usepackage[all]{nowidow}
-\usepackage[hyphenation]{impnattypo}
+\usepackage[hyphenation,parindent]{impnattypo}
 
 % Permettre un texte en pied de page pour les éventuels remerciements. Apparaît sous les affiliations. Se comporte comme une note de bas de page mais sans appel de note -- TODO
 \newcommand\extrafootertext[1]{%
@@ -562,4 +817,4 @@
     \extrafootertext{#1}}{}
 
 \newcommand{\remerciements}[1]{\extrafootertext{Remerciements : #1}}
-\newcommand{\remerciementsEng}[1]{\extrafootertext{\selectlanguage{english}Acknowledgements : #1}}
+\newcommand{\remerciementsENG}[1]{\extrafootertext{\selectlanguage{english}Acknowledgements : #1}}
