@@ -18,5 +18,7 @@ Assurez-vous d'avoir une distribution LaTeX à jour :
 # Compilation
 Utilisez LuaLaTeX ou XeLaTeX pour compiler vos fichiers.
 
+La classe de document est prévue pour compiler les fichiers de bibliographie avec le moteur biber et l'extension biblatex.
+
 # Évolution
 La classe actuelle est destinée à évoluer pour devenir compatible avec une chaîne de production intégralement basée sur LaTeX, tant pour la sortie papier que pour la parution sur les plateformes de diffusion en ligne.
