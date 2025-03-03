@@ -7,7 +7,9 @@ author: Sébastien Mengin
 Ce projet fournit une classe de document LaTeX personnalisée pour la *Revue économique*. Cette classe permet de formater les articles selon les directives de la revue.
 
 # Installation
-1. Clonez le dépôt : https://github.com/edilibre/Revue-Economique-Authors.git
+Récupérez l'archive zip qui fournit un dossier de travail contenant la classe de document et un fichier « gabarit » :
+
+https://github.com/edilibre/Revue-Economique-Authors/archive/refs/heads/main.zip
 
 # Dépendances
 Assurez-vous d'avoir une distribution LaTeX à jour :
