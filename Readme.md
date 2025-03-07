@@ -1,13 +1,13 @@
 ---
 title: Classe de document pour la *Revue économique*
-author: Sébastien Mengin
+author: © 2024-2025 Sébastien Mengin -- www.edilibre.net
 ---
 
 # Description
 Ce projet fournit une classe de document LaTeX personnalisée pour la *Revue économique*. Cette classe permet de formater les articles selon les directives de la revue.
 
 # Installation
-Récupérez l'archive zip qui fournit un dossier de travail contenant la classe de document et un fichier « gabarit » :
+Récupérez l'archive qui fournit un dossier de travail contenant la classe de document et un fichier « gabarit » :
 
 https://github.com/edilibre/Revue-Economique-Authors/archive/refs/heads/main.zip
 
@@ -26,6 +26,10 @@ On peut également utiliser la classe de document sur Overleaf, sans nécessiter
 Utilisez les moteurs LuaLaTeX ou XeLaTeX pour compiler vos fichiers.
 
 La classe de document utilise le package `biblatex`, elle est prévue pour compiler les fichiers de bibliographie avec biber.
+
+## Citations
+
+Les commandes de citations à utiliser son celles prévues par le package biblatex, principalement : `\parencite{<ref>}` et `\textcite{<ref>}`.
 
 # Évolution
 
