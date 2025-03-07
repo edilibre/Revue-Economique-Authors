@@ -11,16 +11,22 @@ Récupérez l'archive zip qui fournit un dossier de travail contenant la classe 
 
 https://github.com/edilibre/Revue-Economique-Authors/archive/refs/heads/main.zip
 
+Le fichier `Gabarit-revue-economique.tex` contient les commandes et instructions de base pour rédiger un article pour la _Revue économique_.
+
 # Dépendances
 Assurez-vous d'avoir une distribution LaTeX à jour :
 - [TeX Live](https://www.tug.org/texlive/)
 - [MiKTeX](https://miktex.org/)
 - [MacTeX](https://www.tug.org/mactex/)
 
-# Compilation
-Utilisez LuaLaTeX ou XeLaTeX pour compiler vos fichiers.
+On peut également utiliser la classe de document sur Overleaf, sans nécessiter d'installation sur PC perso : https://fr.overleaf.com/
 
-La classe de document est prévue pour compiler les fichiers de bibliographie avec le moteur biber et l'extension biblatex.
+# Compilation
+
+Utilisez les moteurs LuaLaTeX ou XeLaTeX pour compiler vos fichiers.
+
+La classe de document utilise le package `biblatex`, elle est prévue pour compiler les fichiers de bibliographie avec biber.
 
 # Évolution
+
 La classe actuelle est destinée à évoluer pour devenir compatible avec une chaîne de production intégralement basée sur LaTeX, tant pour la sortie papier que pour la parution sur les plateformes de diffusion en ligne.
