@@ -15,6 +15,7 @@ Le fichier `Gabarit-revue-economique.tex` contient les commandes et instructions
 
 # Dépendances
 Assurez-vous d'avoir une distribution LaTeX à jour :
+
 - [TeX Live](https://www.tug.org/texlive/)
 - [MiKTeX](https://miktex.org/)
 - [MacTeX](https://www.tug.org/mactex/)
