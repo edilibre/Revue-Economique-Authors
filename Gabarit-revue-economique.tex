@@ -1,7 +1,6 @@
-% !TeX root = Gabarit-revue-economique.tex
 \documentclass{Revue-economique} % Classe de document pour la revue économique
 
-\input{00-fichiers-bibtex.tex} % Fichier contenant les références bibliographiques
+\addbibresource[label=ExempleBib]{ExempleBib.bib} % Fichier biblio pour l'exemple
 
 \begin{document} % Contenu du document
 
@@ -27,6 +26,8 @@
 
 \jelcode{<JEL>} % Code JEL
 
+\begin{refsection}[<Etiquette-du-fichier-biblio>] % Section de références bibliographiques
+    
 \section{Introduction}
 
 Paragraphe introductif \parencite{smith2023economic}.
@@ -36,6 +37,7 @@ Paragraphe introductif \parencite{smith2023economic}.
 \end{appendices}
 
 \printbibliography % Bibliographie
+\end{refsection}
 
 \end{Article}
 
