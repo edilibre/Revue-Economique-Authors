@@ -26,6 +26,8 @@ On peut également utiliser la classe de document sur Overleaf, sans nécessiter
 
 Utilisez les moteurs LuaLaTeX ou XeLaTeX pour compiler vos fichiers.
 
+La classe de document est prévue pour compiler l'article avec les réglages de mise en page définis par la maquette de la revue. Les auteurs peuvent ainsi visualiser leur travail dans son rendu proche de l'état final.
+
 La classe de document utilise le package `biblatex`, elle est prévue pour compiler les fichiers de bibliographie avec biber.
 
 ## Citations

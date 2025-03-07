@@ -9,7 +9,7 @@
 \DeclareOption{ecran}{\@ecrantrue\@impressionfalse} % Active l'affichage à l'écran
 \DeclareOption{impression}{\@impressiontrue\@ecranfalse} % Active l'affichage pour impression
 \DeclareOption{prepacopie}{\@prepacopietrue} % Active l'affichage pour la préparation de copie
-\ExecuteOptions{ecran} % Par défaut, l'affichage est configuré pour l'écran
+\ExecuteOptions{impression} % Par défaut, l'affichage est configuré pour l'écran
 \ProcessOptions\relax % Traite les options du document
 
 % Packages linguistiques
