@@ -22,13 +22,13 @@ Assurez-vous d'avoir une distribution LaTeX à jour :
 - [MiKTeX](https://miktex.org/)
 - [MacTeX](https://www.tug.org/mactex/)
 
-On peut également utiliser la classe de document sur Overleaf, sans nécessiter d'installation sur un ordinateur personnel : https://fr.overleaf.com/
+On peut également utiliser la classe de document sur Overleaf, sans avoir besoin d'installer LaTeX sur son ordinateur personnel : https://fr.overleaf.com/
 
 # Compilation
 
 La classe de document est prévue pour compiler l'article avec les réglages de mise en page définis par la maquette de la revue. Les auteurs peuvent ainsi visualiser leur travail dans son rendu proche de l'état final. 
 
-Si vous l'appliquez directement à un article déjà écrit, sans passer par le gabarit, il est possible et même normal que la classe de document génère des erreurs d’incompatibilité, que vous pourrez résoudre facilement en suivant les quelques spécifications du présent document et en vous référant au gabarit. Nous rappelons que tout travail de mise en forme réalisé par les auteurs fera gagner du temps sur le travail éditorial.
+Si vous l'appliquez directement à un article déjà écrit, sans passer par le gabarit, il est possible et même normal que la classe de document génère des erreurs d’incompatibilité, que vous pourrez résoudre facilement en suivant les quelques spécifications données ici et en vous référant au gabarit. Nous rappelons que tout travail de mise en forme réalisé par les auteurs fera gagner du temps dans le processus éditorial.
 
 Utilisez les moteurs LuaLaTeX ou XeLaTeX pour compiler vos fichiers. Sur Overleaf, l'option pour changer de moteur de compilation se trouve dans la rubrique Menu (coin supérieur gauche de votre écran). 
 
