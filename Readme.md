@@ -22,17 +22,19 @@ Assurez-vous d'avoir une distribution LaTeX à jour :
 - [MiKTeX](https://miktex.org/)
 - [MacTeX](https://www.tug.org/mactex/)
 
-On peut également utiliser la classe de document sur Overleaf, sans nécessiter d'installation sur PC perso : https://fr.overleaf.com/
+On peut également utiliser la classe de document sur Overleaf, sans nécessiter d'installation sur un ordinateur personnel : https://fr.overleaf.com/
 
 # Compilation
 
-Utilisez les moteurs LuaLaTeX ou XeLaTeX pour compiler vos fichiers. Sur Overleaf, l'option pour changer de moteur de compilation se trouve dans la rubrique Menu (coin supérieur gauche de votre écran).
-
 La classe de document est prévue pour compiler l'article avec les réglages de mise en page définis par la maquette de la revue. Les auteurs peuvent ainsi visualiser leur travail dans son rendu proche de l'état final. 
+
+Utilisez les moteurs LuaLaTeX ou XeLaTeX pour compiler vos fichiers. Sur Overleaf, l'option pour changer de moteur de compilation se trouve dans la rubrique Menu (coin supérieur gauche de votre écran). 
+
+Rappel : le document à compiler, le fichier `.cls` et le fichier `.bib` doivent tous être dans le même répertoire. Pour compiler `gabarit-revue-economique.tex`, utilisez le fichier de classe et le fichier `ExempleBib.bib`.
 
 Si des packages sont manquants, ils peuvent être ajoutés dans le préambule. En revanche, la ligne `\documentclass` ne doit comporter aucune autre option que `{Revue-economique.cls}`.
 
-Assurez-vous qu'il existe un fichier .bib dans votre dossier de travail qui contient toutes vos références.
+Assurez-vous qu'il existe un fichier `.bib` dans votre dossier de travail qui contient toutes vos références.
 
 ## Citations
 
@@ -41,4 +43,4 @@ Les commandes de citations à utiliser son celles prévues par le package biblat
 # Évolution
 
 La classe actuelle est destinée à évoluer pour devenir compatible avec une chaîne de production intégralement basée sur LaTeX, tant pour la sortie papier que pour la parution sur les plateformes de diffusion en ligne.
-Assurez-vous d'avoir la dernière version du fichier .cls au moment de la compilation.
+Assurez-vous d'avoir la dernière version du fichier `.cls` au moment de la compilation.
