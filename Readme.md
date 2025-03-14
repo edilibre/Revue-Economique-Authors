@@ -30,7 +30,7 @@ La classe de document est prévue pour compiler l'article avec les réglages de 
 
 Si vous l'appliquez directement à un article déjà écrit, sans passer par le gabarit, il est possible et même normal que la classe de document génère des erreurs d’incompatibilité, que vous pourrez résoudre facilement en suivant les quelques spécifications données ici et en vous référant au gabarit. Nous rappelons que tout travail de mise en forme réalisé par les auteurs fera gagner du temps dans le processus éditorial.
 
-Utilisez les moteurs LuaLaTeX ou XeLaTeX pour compiler vos fichiers. Sur Overleaf, l'option pour changer de moteur de compilation se trouve dans la rubrique Menu (coin supérieur gauche de votre écran). 
+Utilisez le moteur LuaLaTeX pour compiler vos fichiers. Sur Overleaf, l'option pour changer de moteur de compilation se trouve dans la rubrique Menu (coin supérieur gauche de votre écran). 
 
 Rappel : le document à compiler, le fichier `.cls` et le fichier `.bib` doivent tous être dans le même répertoire. Pour compiler `gabarit-revue-economique.tex`, utilisez le fichier de classe et le fichier `ExempleBib.bib`.
 
