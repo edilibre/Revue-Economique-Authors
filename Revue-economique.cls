@@ -139,6 +139,8 @@
 \RequirePackage{relsize} % composer du texte dans une taille relative au texte environnant
 \RequirePackage{icomma} % Supprimer l'espace après les virgules dans les maths
 \RequirePackage{tcolorbox} % Pour la gestion des boîtes colorées
+\tcbuselibrary{skins, breakable} % Charger les bibliothèques nécessaires
+
 
 \usepackage[protrusion=true,expansion=true]{microtype} % Pour améliorer le gris typographique des lignes
 \setsansfont{Arial} % Définit la police sans empattement comme Arial
@@ -382,7 +384,7 @@
 \AtBeginEnvironment{appendices}{
     \vspace{2\baselineskip}
     \begin{center}
-        \itshape\iflanguage{english}{\appendixname}{\appendixname}
+        \scshape\itshape\iflanguage{english}{\appendixname}{\appendixname}
     \end{center}
     \setcounter{figure}{0}
     \setcounter{table}{0}
@@ -585,7 +587,7 @@
     \par\vspace{3mm}% Espace vertical après le titre anglais
 }
 
-\AfterEndEnvironment{resume}{%
+\AtBeginEnvironment{refsection}{%
     \renewcommand\thefootnote{\@arabic\c@footnote}%
     \setcounter{footnote}{0}%
     }
@@ -745,11 +747,6 @@
    \makebox[0pt][l]{\rule[-\dp\RE@lemmebox]{1pt}{\dimexpr\ht\RE@lemmebox+\dp\RE@lemmebox\relax}}%
    \usebox{\RE@lemmebox}\par\medskip}
 
-% Environnement Proposition
-
-\usepackage{tcolorbox}
-\tcbuselibrary{skins, breakable} % Charger les bibliothèques nécessaires
-
 \newcounter{proposition}[chapter] % Définir le compteur "proposition" et le réinitialiser à chaque nouveau chapitre
 
 \newenvironment{proposition}
@@ -776,20 +773,6 @@
     \par%
   }
 
-% Environnement demonstration clône de l'environnement resultat
-\newenvironment{demonstration}
-  { \par\vspace{\baselineskip}%
-   \begin{minipage}{\linewidth-\parindent}%
-   \textit{\textbf{Démonstration.}}\quad}
-  {\hfill \blacksquare
-  \end{minipage}\par\bigskip}
-
-% Environnement proof clône de l'environnement resultat
-% \newenvironment{proof}
-%   { \par\vspace{\baselineskip}%
-%    \begin{minipage}{\linewidth-\parindent}%
-%    \textit{\textbf{Proof.}}\quad}
-%   {\hfill \blacksquare\end{minipage}\par\bigskip}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
