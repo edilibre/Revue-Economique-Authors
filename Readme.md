@@ -1,6 +1,7 @@
 ---
 title: Classe de document pour la *Revue économique*
 author: © 2024-2025 Sébastien Mengin -- www.edilibre.net
+lang: fr-FR
 ---
 
 # Description
