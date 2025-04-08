@@ -40,7 +40,7 @@ Rappel : le document à compiler, le fichier `.cls` et le fichier `.bib` doivent
 
 Assurez-vous qu'il existe un fichier `.bib` dans votre dossier de travail qui contient toutes vos références bibliographiques.
 
-##Personnalisation
+## Personnalisation
 Si des packages sont manquants, ils peuvent être ajoutés dans le préambule. En revanche, la ligne `\documentclass` ne doit comporter aucune autre option que `{Revue-economique.cls}`, en lieu et place de la classse de document initialement spécifiée.
 
 ## Citations bibliographiques
