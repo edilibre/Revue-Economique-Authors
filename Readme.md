@@ -8,13 +8,16 @@ lang: fr-FR
 Ce projet fournit une classe de document LaTeX personnalisée pour la *Revue économique*. Cette classe permet de formater les articles selon les directives de la revue.
 
 # Installation
-Récupérez l'archive qui fournit un dossier de travail contenant la classe de document et un fichier « gabarit » :
+Téléchargez les fichiers déposés à l'adresse : [https://sdrive.cnrs.fr/s/G7tGSSoWT6yyLts]
 
-https://github.com/edilibre/Revue-Economique-Authors/archive/refs/heads/main.zip
+Ce dossier contient :
+- Le fichier de classe de document
+- Les présentes instructions d'utilisation (readme)
+- Les fichiers modèles (`ExempleBib.bib` et `Gabarit-revue-economique.tex`).
 
-Ajoutez le document `Revue-economique.cls` au dossier dans lequel se trouve le texte à compiler.
+Dans votre éditeur LaTeX, ajoutez le document `Revue-economique.cls` au dossier dans lequel se trouve le texte à compiler.
 
-Le fichier `Gabarit-revue-economique.tex` est un modèle de fichier adapté à la classe de documents `Revue-economique.cls`. En suivant ce modèle, vous pourrez structurer votre document de façon à ce qu'il compile correctement.
+Le fichier `Gabarit-revue-economique.tex` est un modèle de fichier adapté à la classe de documents `Revue-economique.cls`. En suivant ce modèle, vous pourrez structurer votre document de façon à ce qu'il compile correctement. Pour compiler `gabarit-revue-economique.tex`, utilisez le fichier de classe et le fichier `ExempleBib.bib`.
 
 # Éditeur LaTeX
 On peut utiliser la classe de document sur Overleaf, sans avoir besoin d'installer LaTeX sur son ordinateur personnel : https://fr.overleaf.com/. Si vous utilisez LaTeX en local, assurez-vous d'avoir une distribution à jour :
@@ -36,7 +39,7 @@ Si vous l'appliquez directement à un article déjà écrit, sans passer par le 
 Utilisez le moteur LuaLaTeX pour compiler vos fichiers. Sur Overleaf, l'option pour changer de moteur de compilation se trouve dans la rubrique Menu (coin supérieur gauche de votre écran). 
 
 ## Dossier de travail
-Rappel : le document à compiler, le fichier `.cls` et le fichier `.bib` doivent tous être dans le même répertoire. Pour compiler `gabarit-revue-economique.tex`, utilisez le fichier de classe et le fichier `ExempleBib.bib`.
+Rappel : le document à compiler, le fichier `.cls` et le fichier `.bib` doivent tous être dans le même répertoire.
 
 Assurez-vous qu'il existe un fichier `.bib` dans votre dossier de travail qui contient toutes vos références bibliographiques.
 
