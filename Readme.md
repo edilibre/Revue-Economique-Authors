@@ -8,7 +8,7 @@ lang: fr-FR
 Ce projet fournit une classe de document LaTeX personnalisée pour la *Revue économique*. Cette classe permet de formater les articles selon les directives de la revue.
 
 # Installation
-Téléchargez les fichiers déposés à l'adresse : [https://sdrive.cnrs.fr/s/G7tGSSoWT6yyLts]
+Téléchargez les fichiers déposés à l'adresse : <https://sdrive.cnrs.fr/s/G7tGSSoWT6yyLts>
 
 Ce dossier contient :
 - Le fichier de classe de document
