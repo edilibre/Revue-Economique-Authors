@@ -9,7 +9,7 @@
 \DeclareOption{ecran}{\@ecrantrue\@impressionfalse} % Active l'affichage à l'écran
 \DeclareOption{impression}{\@impressiontrue\@ecranfalse} % Active l'affichage pour impression
 \DeclareOption{prepacopie}{\@prepacopietrue} % Active l'affichage pour la préparation de copie
-\ExecuteOptions{impression} % Par défaut, l'affichage est configuré pour l'écran
+\ExecuteOptions{ecran} % Par défaut, l'affichage est configuré pour l'écran
 \ProcessOptions\relax % Traite les options du document
 
 % Packages linguistiques
@@ -216,7 +216,7 @@
 
 % Gestion de la bibliographie
 \RequirePackage[
-  style=ext-authoryear-comp, 
+  style=ext-authoryear-comp,
   giveninits=true,
   articlein=false,
   backend=biber, 
@@ -226,10 +226,10 @@
   isbn=false, 
   url=false, 
   eprint=false,
-  maxcitenames=1, % Maximum 1 auteurs dans les citations
-  mincitenames=1, % Utiliser "et al." au-delà de 1 auteurs
+  maxcitenames=3, % Maximum 1 auteurs dans les citations
+  mincitenames=3, % Utiliser "et al." au-delà de 3 auteurs
   maxbibnames=3,  % Maximum 3 auteurs dans la bibliographie
-  minbibnames=1   % Utiliser "et al." au-delà de 1 auteurs dans la bibliographie
+  minbibnames=3   % Utiliser "et al." au-delà de 3 auteurs dans la bibliographie
 ]{biblatex}
 \DeclareInnerCiteDelims{parencite}{[}{]}
 \DeclareInnerCiteDelims{textcite}{[}{]}
@@ -384,7 +384,7 @@
 \AtBeginEnvironment{appendices}{
     \vspace{2\baselineskip}
     \begin{center}
-        \scshape\itshape\iflanguage{english}{\appendixname}{\appendixname}
+        \itshape\iflanguage{english}{\MakeUppercase{\appendixname}}{\MakeUppercase{\appendixname}}
     \end{center}
     \setcounter{figure}{0}
     \setcounter{table}{0}
@@ -590,7 +590,7 @@
 \AtBeginEnvironment{refsection}{%
     \renewcommand\thefootnote{\@arabic\c@footnote}%
     \setcounter{footnote}{0}%
-    }
+}
 
 \newenvironment{resume}{%
     \selectlanguage{french}%
@@ -749,7 +749,7 @@
 
 \newcounter{proposition}[chapter] % Définir le compteur "proposition" et le réinitialiser à chaque nouveau chapitre
 
-\newenvironment{proposition}
+\newenvironment{proposition}[1][]
   {%
     \refstepcounter{proposition}%
     \par%
@@ -765,12 +765,48 @@
       overlay={%
         \draw[line width=1pt] ([yshift=2.5mm]frame.south west) -- ([yshift=-2.5mm]frame.north west); % Filet vertical à gauche
       },
-      before upper={\textsc{Proposition \theproposition.}\quad\itshape}, % Mise en forme du titre
+      before upper={\textsc{Proposition \theproposition#1.}\quad\itshape}, % Mise en forme du titre
     ]
   }
   {%
     \end{tcolorbox}%
     \par%
+  }
+
+\newcounter{hypo}
+\newenvironment{hypo}
+  {%
+    \refstepcounter{hypo}%
+    \par%
+    \begin{tcolorbox}[
+      enhanced, % Activer les fonctionnalités avancées
+      breakable, % Permettre la rupture de la boîte sur plusieurs pages
+      colback=white, % Fond blanc
+      colframe=white, % Pas de bordure visible
+      boxrule=0pt, % Pas de bordure
+      left=2.5mm,
+      right=0mm, 
+      beforeafter skip=1mm,
+      overlay={%
+        \draw[line width=1pt] ([yshift=2.5mm]frame.south west) -- ([yshift=-2.5mm]frame.north west); % Filet vertical à gauche
+      },
+      before upper={\textsc{Hypothèse \thehypo.}\quad\itshape}, % Mise en forme du titre
+    ]
+  }
+  {%
+    \end{tcolorbox}%
+    \par%
+  }
+
+\newcounter{demo}
+\newenvironment{demonstration}
+  {%
+    \refstepcounter{demo}%
+    \par%
+    \textbf{\textit{Démonstration \theproposition.}}\quad % Mise en forme du titre
+  }
+  {%
+    \hfill \blacksquare%
   }
 
 
