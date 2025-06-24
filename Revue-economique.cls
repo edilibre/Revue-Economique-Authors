@@ -806,7 +806,7 @@
     \textbf{\textit{Démonstration \theproposition.}}\quad % Mise en forme du titre
   }
   {%
-    \hfill \blacksquare%
+    \hfill \blacksquare\par\medskip%
   }
 
 
