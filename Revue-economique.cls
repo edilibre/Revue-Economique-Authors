@@ -19,6 +19,7 @@
 % Packages supplémentaires
 \RequirePackage{changes} % Pour le suivi des modifications et les commentaires éditoriaux
 \RequirePackage{graphicx} % Pour la gestion des images
+\RequirePackage{pdfpages} % Pour l'insertion de pages PDF
 \RequirePackage[absolute,overlay]{textpos}
 
 \setlength{\TPHorizModule}{1mm}  % Définit l'unité de mesure horizontale (ici en millimètres)
