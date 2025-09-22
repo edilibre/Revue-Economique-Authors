@@ -19,8 +19,10 @@
 % Packages supplémentaires
 \RequirePackage{changes} % Pour le suivi des modifications et les commentaires éditoriaux
 \RequirePackage{graphicx} % Pour la gestion des images
+\RequirePackage{float} 
 \RequirePackage{pdfpages} % Pour l'insertion de pages PDF
-\RequirePackage[absolute,overlay]{textpos}
+\RequirePackage{pdflscape} % Pour la gestion des pages en mode paysage
+\RequirePackage[absolute,overlay]{textpos} 
 
 \setlength{\TPHorizModule}{1mm}  % Définit l'unité de mesure horizontale (ici en millimètres)
 \setlength{\TPVertModule}{1mm}   % Définit l'unité de mesure verticale (ici en millimètres)
@@ -179,7 +181,7 @@
 % Packages supplémentaires pour la gestion des titres de section
 \RequirePackage{titlesec} 
 % Définition des titres de section de niveau 1
-\titleformat{\section}[block]
+\titleformat{\section}[hang]
 {\normalfont\fontsize{11}{13}\selectfont\sffamily}
 {\thesection.}
 {1em} % était 1em
@@ -227,7 +229,7 @@
   isbn=false, 
   url=false, 
   eprint=false,
-  maxcitenames=3, % Maximum 1 auteurs dans les citations
+  maxcitenames=3, % Maximum 3 auteurs dans les citations
   mincitenames=3, % Utiliser "et al." au-delà de 3 auteurs
   maxbibnames=3,  % Maximum 3 auteurs dans la bibliographie
   minbibnames=3   % Utiliser "et al." au-delà de 3 auteurs dans la bibliographie
@@ -807,7 +809,7 @@
     \textbf{\textit{Démonstration \theproposition.}}\quad % Mise en forme du titre
   }
   {%
-    \hfill \blacksquare\par\medskip%
+    \hfill \blacksquare \par\medskip%
   }
 
 
